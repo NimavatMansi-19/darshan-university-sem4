@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<form>
+    <div class="mb-3">
+        <label for="empid" class="form-label">EmpID</label>
+        <input type="number" class="form-control" id="empid">
+    </div>
+    <div class="mb-3">
+        <label for="empname" class="form-label">EmpName</label>
+        <input type="text" class="form-control" id="empname">
+    </div>
+    <div class="mb-3">
+        <label for="empcode" class="form-label">EmpCode</label>
+        <input type="text" class="form-control" id="empcode">
+    </div>
+    <div class="mb-3">
+        <label for="Salary" class="form-label">Salary</label>
+        <input type="number" class="form-control" id="Salary">
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Designation
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="HOD">HOD</a></li>
+            <li><a class="dropdown-item" href="Admin">Admin</a></li>
+            <li><a class="dropdown-item" href="Manager">Manager</a></li>
+        </ul>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>

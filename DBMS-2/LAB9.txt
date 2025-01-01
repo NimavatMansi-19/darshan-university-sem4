@@ -1,0 +1,675 @@
+[{FID:101,Fname:'Anil',Bname:'VRCE',Salary:1000,Jdate:'1-3-95'},
+{FID:102,Fname:'Sunil',Bname:'AJNI',Salary:5000,Jdate:'4-1-96'},
+{FID:103,Fname:'Mehul',Bname:'KAROLBAGH',Salary:3500,Jdate:'17-11-95'},
+{FID:104,Fname:'Madhuri',Bname:'CHANDI',Salary:1200,Jdate:'17-12-95'},
+{FID:105,Fname:'Pramod',Bname:'M.G ROAD',Salary:3000,Jdate:'27-3-96'},
+{FID:106,Fname:'Sandip',Bname:'ANDHERI',Salary:2000,Jdate:'31-3-96'},
+{FID:107,Fname:'Shivani',Bname:'VIRAR',Salary:1000,Jdate:'5-9-95'},
+{FID:108,Fname:'Kranti',Bname:'NEHRU PLACE',Salary:5000,Jdate:'2-7-95'},
+]
+use BANK_INFO
+switched to db BANK_INFO
+db.createCollection("Deposit")
+{ ok: 1 }
+db.Deposit.insertMany([{FID:1,Fname:'Anil',Bname:'VRCE',Salary:1000,Jdate:'1-3-95'},
+{FID:2,Fname:'Sunil',Bname:'AJNI',Salary:5000,Jdate:'4-1-96'},
+{FID:3,Fname:'Mehul',Bname:'KAROLBAGH',Salary:3500,Jdate:'17-11-95'},
+{FID:4,Fname:'Madhuri',Bname:'CHANDI',Salary:1200,Jdate:'17-12-95'},
+{FID:5,Fname:'Pramod',Bname:'M.G ROAD',Salary:3000,Jdate:'27-3-96'},
+{FID:6,Fname:'Sandip',Bname:'ANDHERI',Salary:2000,Jdate:'31-3-96'},
+{FID:7,Fname:'Shivani',Bname:'VIRAR',Salary:1000,Jdate:'5-9-95'},
+{FID:8,Fname:'Kranti',Bname:'NEHRU PLACE',Salary:5000,Jdate:'2-7-95'}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6764deb742f6b3f160b135c4'),
+    '1': ObjectId('6764deb742f6b3f160b135c5'),
+    '2': ObjectId('6764deb742f6b3f160b135c6'),
+    '3': ObjectId('6764deb742f6b3f160b135c7'),
+    '4': ObjectId('6764deb742f6b3f160b135c8'),
+    '5': ObjectId('6764deb742f6b3f160b135c9'),
+    '6': ObjectId('6764deb742f6b3f160b135ca'),
+    '7': ObjectId('6764deb742f6b3f160b135cb')
+  }
+}
+db.Deposit.find()
+{
+  _id: ObjectId('6764deb742f6b3f160b135c4'),
+  FID: 1,
+  Fname: 'Anil',
+  Bname: 'VRCE',
+  Salary: 1000,
+  Jdate: '1-3-95'
+}
+{
+  _id: ObjectId('6764deb742f6b3f160b135c5'),
+  FID: 2,
+  Fname: 'Sunil',
+  Bname: 'AJNI',
+  Salary: 5000,
+  Jdate: '4-1-96'
+}
+{
+  _id: ObjectId('6764deb742f6b3f160b135c6'),
+  FID: 3,
+  Fname: 'Mehul',
+  Bname: 'KAROLBAGH',
+  Salary: 3500,
+  Jdate: '17-11-95'
+}
+{
+  _id: ObjectId('6764deb742f6b3f160b135c7'),
+  FID: 4,
+  Fname: 'Madhuri',
+  Bname: 'CHANDI',
+  Salary: 1200,
+  Jdate: '17-12-95'
+}
+{
+  _id: ObjectId('6764deb742f6b3f160b135c8'),
+  FID: 5,
+  Fname: 'Pramod',
+  Bname: 'M.G ROAD',
+  Salary: 3000,
+  Jdate: '27-3-96'
+}
+{
+  _id: ObjectId('6764deb742f6b3f160b135c9'),
+  FID: 6,
+  Fname: 'Sandip',
+  Bname: 'ANDHERI',
+  Salary: 2000,
+  Jdate: '31-3-96'
+}
+{
+  _id: ObjectId('6764deb742f6b3f160b135ca'),
+  FID: 7,
+  Fname: 'Shivani',
+  Bname: 'VIRAR',
+  Salary: 1000,
+  Jdate: '5-9-95'
+}
+{
+  _id: ObjectId('6764deb742f6b3f160b135cb'),
+  FID: 8,
+  Fname: 'Kranti',
+  Bname: 'NEHRU PLACE',
+  Salary: 5000,
+  Jdate: '2-7-95'
+}
+db.Deposit.findOne()
+{
+  _id: ObjectId('6764deb742f6b3f160b135c4'),
+  FID: 1,
+  Fname: 'Anil',
+  Bname: 'VRCE',
+  Salary: 1000,
+  Jdate: '1-3-95'
+}
+db.Deposit.drop()
+true
+db.createCollection("Deposit")
+{ ok: 1 }
+db.Deposit.insertMany([{FID:101,Fname:'Anil',Bname:'VRCE',Salary:1000,Jdate:'1-3-95'},
+{FID:102,Fname:'Sunil',Bname:'AJNI',Salary:5000,Jdate:'4-1-96'},
+{FID:103,Fname:'Mehul',Bname:'KAROLBAGH',Salary:3500,Jdate:'17-11-95'},
+{FID:104,Fname:'Madhuri',Bname:'CHANDI',Salary:1200,Jdate:'17-12-95'},
+{FID:105,Fname:'Pramod',Bname:'M.G ROAD',Salary:3000,Jdate:'27-3-96'},
+{FID:106,Fname:'Sandip',Bname:'ANDHERI',Salary:2000,Jdate:'31-3-96'},
+{FID:107,Fname:'Shivani',Bname:'VIRAR',Salary:1000,Jdate:'5-9-95'},
+{FID:108,Fname:'Kranti',Bname:'NEHRU PLACE',Salary:5000,Jdate:'2-7-95'}
+]
+)
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6764df9042f6b3f160b135cc'),
+    '1': ObjectId('6764df9042f6b3f160b135cd'),
+    '2': ObjectId('6764df9042f6b3f160b135ce'),
+    '3': ObjectId('6764df9042f6b3f160b135cf'),
+    '4': ObjectId('6764df9042f6b3f160b135d0'),
+    '5': ObjectId('6764df9042f6b3f160b135d1'),
+    '6': ObjectId('6764df9042f6b3f160b135d2'),
+    '7': ObjectId('6764df9042f6b3f160b135d3')
+  }
+}
+db.Deposit.insertOne({FID:109,Fname:'KIRTI',Bname:'VIRAR',Salary:5000,Jdate:'3-5-97'})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6764dfe242f6b3f160b135d4')
+}
+db.Deposit.insertMany([{FID:110,Fname:'Mitali',Bname:'Andheri',Salary:4500,Jdate:'4-9-95'},
+{FID:111,Fname:'Rajvi',Bname:'NEHRU PLACE',Salary:7000,Jdate:'2-10-98'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6764e06342f6b3f160b135d5'),
+    '1': ObjectId('6764e06342f6b3f160b135d6')
+  }
+}
+db.Deposit.find()
+{
+  _id: ObjectId('6764df9042f6b3f160b135cc'),
+  FID: 101,
+  Fname: 'Anil',
+  Bname: 'VRCE',
+  Salary: 1000,
+  Jdate: '1-3-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cd'),
+  FID: 102,
+  Fname: 'Sunil',
+  Bname: 'AJNI',
+  Salary: 5000,
+  Jdate: '4-1-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135ce'),
+  FID: 103,
+  Fname: 'Mehul',
+  Bname: 'KAROLBAGH',
+  Salary: 3500,
+  Jdate: '17-11-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cf'),
+  FID: 104,
+  Fname: 'Madhuri',
+  Bname: 'CHANDI',
+  Salary: 1200,
+  Jdate: '17-12-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d0'),
+  FID: 105,
+  Fname: 'Pramod',
+  Bname: 'M.G ROAD',
+  Salary: 3000,
+  Jdate: '27-3-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d1'),
+  FID: 106,
+  Fname: 'Sandip',
+  Bname: 'ANDHERI',
+  Salary: 2000,
+  Jdate: '31-3-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d2'),
+  FID: 107,
+  Fname: 'Shivani',
+  Bname: 'VIRAR',
+  Salary: 1000,
+  Jdate: '5-9-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d3'),
+  FID: 108,
+  Fname: 'Kranti',
+  Bname: 'NEHRU PLACE',
+  Salary: 5000,
+  Jdate: '2-7-95'
+}
+{
+  _id: ObjectId('6764dfe242f6b3f160b135d4'),
+  FID: 109,
+  Fname: 'KIRTI',
+  Bname: 'VIRAR',
+  Salary: 5000,
+  Jdate: '3-5-97'
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d5'),
+  FID: 110,
+  Fname: 'Mitali',
+  Bname: 'Andheri',
+  Salary: 4500,
+  Jdate: '4-9-95'
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d6'),
+  FID: 111,
+  Fname: 'Rajvi',
+  Bname: 'NEHRU PLACE',
+  Salary: 7000,
+  Jdate: '2-10-98'
+}
+db.Deposit.find({[$and{Salary:{$gt:3000},{Salary:{$lt:5000}}}]})
+SyntaxError: Unexpected token, expected "]" (1:22)
+
+> 1 | db.Deposit.find({[$and{Salary:{$gt:3000},{Salary:{$lt:5000}}}]})
+    |                       ^
+db.Deposit.find({[$and:{Salary:{$gt:3000},{Salary:{$lt:5000}}}]})
+SyntaxError: Unexpected token, expected "]" (1:22)
+
+> 1 | db.Deposit.find({[$and:{Salary:{$gt:3000},{Salary:{$lt:5000}}}]})
+    |                       ^
+db.Deposit.find({[$and:{Salary:{$gt:3000}},{Salary:{$lt:5000}}]})
+SyntaxError: Unexpected token, expected "]" (1:22)
+
+> 1 | db.Deposit.find({[$and:{Salary:{$gt:3000}},{Salary:{$lt:5000}}]})
+    |                       ^
+db.Deposit.find({$and:[{Salary:{$gt:3000}},{Salary:{$lt:5000}}]})
+{
+  _id: ObjectId('6764df9042f6b3f160b135ce'),
+  FID: 103,
+  Fname: 'Mehul',
+  Bname: 'KAROLBAGH',
+  Salary: 3500,
+  Jdate: '17-11-95'
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d5'),
+  FID: 110,
+  Fname: 'Mitali',
+  Bname: 'Andheri',
+  Salary: 4500,
+  Jdate: '4-9-95'
+}
+db.Deposit.find({$and:[{Salary:{$gt:2000}},{Bname:'VIRAR'}]})
+{
+  _id: ObjectId('6764dfe242f6b3f160b135d4'),
+  FID: 109,
+  Fname: 'KIRTI',
+  Bname: 'VIRAR',
+  Salary: 5000,
+  Jdate: '3-5-97'
+}
+db.Deposit.find({},{Cname,Bname,Salary})
+ReferenceError: Cname is not defined
+db.Deposit.find({},{Fname,Bname,Salary})
+ReferenceError: Fname is not defined
+db.Deposit.find({},{Fname:1,Bname:1,Salary:1})
+{
+  _id: ObjectId('6764df9042f6b3f160b135cc'),
+  Fname: 'Anil',
+  Bname: 'VRCE',
+  Salary: 1000
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cd'),
+  Fname: 'Sunil',
+  Bname: 'AJNI',
+  Salary: 5000
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135ce'),
+  Fname: 'Mehul',
+  Bname: 'KAROLBAGH',
+  Salary: 3500
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cf'),
+  Fname: 'Madhuri',
+  Bname: 'CHANDI',
+  Salary: 1200
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d0'),
+  Fname: 'Pramod',
+  Bname: 'M.G ROAD',
+  Salary: 3000
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d1'),
+  Fname: 'Sandip',
+  Bname: 'ANDHERI',
+  Salary: 2000
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d2'),
+  Fname: 'Shivani',
+  Bname: 'VIRAR',
+  Salary: 1000
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d3'),
+  Fname: 'Kranti',
+  Bname: 'NEHRU PLACE',
+  Salary: 5000
+}
+{
+  _id: ObjectId('6764dfe242f6b3f160b135d4'),
+  Fname: 'KIRTI',
+  Bname: 'VIRAR',
+  Salary: 5000
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d5'),
+  Fname: 'Mitali',
+  Bname: 'Andheri',
+  Salary: 4500
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d6'),
+  Fname: 'Rajvi',
+  Bname: 'NEHRU PLACE',
+  Salary: 7000
+}
+db.Deposit.find().sort(Fname)
+ReferenceError: Fname is not defined
+db.Deposit.find().sort(Fname:1)
+SyntaxError: Unexpected token, expected "," (1:28)
+
+> 1 | db.Deposit.find().sort(Fname:1)
+    |                             ^
+db.Deposit.find().sort({Fname:1})
+{
+  _id: ObjectId('6764df9042f6b3f160b135cc'),
+  FID: 101,
+  Fname: 'Anil',
+  Bname: 'VRCE',
+  Salary: 1000,
+  Jdate: '1-3-95'
+}
+{
+  _id: ObjectId('6764dfe242f6b3f160b135d4'),
+  FID: 109,
+  Fname: 'KIRTI',
+  Bname: 'VIRAR',
+  Salary: 5000,
+  Jdate: '3-5-97'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d3'),
+  FID: 108,
+  Fname: 'Kranti',
+  Bname: 'NEHRU PLACE',
+  Salary: 5000,
+  Jdate: '2-7-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cf'),
+  FID: 104,
+  Fname: 'Madhuri',
+  Bname: 'CHANDI',
+  Salary: 1200,
+  Jdate: '17-12-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135ce'),
+  FID: 103,
+  Fname: 'Mehul',
+  Bname: 'KAROLBAGH',
+  Salary: 3500,
+  Jdate: '17-11-95'
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d5'),
+  FID: 110,
+  Fname: 'Mitali',
+  Bname: 'Andheri',
+  Salary: 4500,
+  Jdate: '4-9-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d0'),
+  FID: 105,
+  Fname: 'Pramod',
+  Bname: 'M.G ROAD',
+  Salary: 3000,
+  Jdate: '27-3-96'
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d6'),
+  FID: 111,
+  Fname: 'Rajvi',
+  Bname: 'NEHRU PLACE',
+  Salary: 7000,
+  Jdate: '2-10-98'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d1'),
+  FID: 106,
+  Fname: 'Sandip',
+  Bname: 'ANDHERI',
+  Salary: 2000,
+  Jdate: '31-3-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d2'),
+  FID: 107,
+  Fname: 'Shivani',
+  Bname: 'VIRAR',
+  Salary: 1000,
+  Jdate: '5-9-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cd'),
+  FID: 102,
+  Fname: 'Sunil',
+  Bname: 'AJNI',
+  Salary: 5000,
+  Jdate: '4-1-96'
+}
+db.Deposit.find().sort({Bname:0})
+MongoInvalidArgumentError: Invalid sort direction: 0
+db.Deposit.find().sort({Bname})
+ReferenceError: Bname is not defined
+db.Deposit.find().sort({Bname:-1})
+{
+  _id: ObjectId('6764df9042f6b3f160b135cc'),
+  FID: 101,
+  Fname: 'Anil',
+  Bname: 'VRCE',
+  Salary: 1000,
+  Jdate: '1-3-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d2'),
+  FID: 107,
+  Fname: 'Shivani',
+  Bname: 'VIRAR',
+  Salary: 1000,
+  Jdate: '5-9-95'
+}
+{
+  _id: ObjectId('6764dfe242f6b3f160b135d4'),
+  FID: 109,
+  Fname: 'KIRTI',
+  Bname: 'VIRAR',
+  Salary: 5000,
+  Jdate: '3-5-97'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d3'),
+  FID: 108,
+  Fname: 'Kranti',
+  Bname: 'NEHRU PLACE',
+  Salary: 5000,
+  Jdate: '2-7-95'
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d6'),
+  FID: 111,
+  Fname: 'Rajvi',
+  Bname: 'NEHRU PLACE',
+  Salary: 7000,
+  Jdate: '2-10-98'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d0'),
+  FID: 105,
+  Fname: 'Pramod',
+  Bname: 'M.G ROAD',
+  Salary: 3000,
+  Jdate: '27-3-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135ce'),
+  FID: 103,
+  Fname: 'Mehul',
+  Bname: 'KAROLBAGH',
+  Salary: 3500,
+  Jdate: '17-11-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cf'),
+  FID: 104,
+  Fname: 'Madhuri',
+  Bname: 'CHANDI',
+  Salary: 1200,
+  Jdate: '17-12-95'
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d5'),
+  FID: 110,
+  Fname: 'Mitali',
+  Bname: 'Andheri',
+  Salary: 4500,
+  Jdate: '4-9-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d1'),
+  FID: 106,
+  Fname: 'Sandip',
+  Bname: 'ANDHERI',
+  Salary: 2000,
+  Jdate: '31-3-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cd'),
+  FID: 102,
+  Fname: 'Sunil',
+  Bname: 'AJNI',
+  Salary: 5000,
+  Jdate: '4-1-96'
+}
+db.Deposit.find().sort({$and:[{FID:1},{Salary:-1}]})
+MongoInvalidArgumentError: Invalid sort direction: [{"FID":1},{"Salary":-1}]
+db.Deposit.find().sort({FID:1}).sort({Salary:-1})
+{
+  _id: ObjectId('6764e06342f6b3f160b135d6'),
+  FID: 111,
+  Fname: 'Rajvi',
+  Bname: 'NEHRU PLACE',
+  Salary: 7000,
+  Jdate: '2-10-98'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cd'),
+  FID: 102,
+  Fname: 'Sunil',
+  Bname: 'AJNI',
+  Salary: 5000,
+  Jdate: '4-1-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d3'),
+  FID: 108,
+  Fname: 'Kranti',
+  Bname: 'NEHRU PLACE',
+  Salary: 5000,
+  Jdate: '2-7-95'
+}
+{
+  _id: ObjectId('6764dfe242f6b3f160b135d4'),
+  FID: 109,
+  Fname: 'KIRTI',
+  Bname: 'VIRAR',
+  Salary: 5000,
+  Jdate: '3-5-97'
+}
+{
+  _id: ObjectId('6764e06342f6b3f160b135d5'),
+  FID: 110,
+  Fname: 'Mitali',
+  Bname: 'Andheri',
+  Salary: 4500,
+  Jdate: '4-9-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135ce'),
+  FID: 103,
+  Fname: 'Mehul',
+  Bname: 'KAROLBAGH',
+  Salary: 3500,
+  Jdate: '17-11-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d0'),
+  FID: 105,
+  Fname: 'Pramod',
+  Bname: 'M.G ROAD',
+  Salary: 3000,
+  Jdate: '27-3-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d1'),
+  FID: 106,
+  Fname: 'Sandip',
+  Bname: 'ANDHERI',
+  Salary: 2000,
+  Jdate: '31-3-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cf'),
+  FID: 104,
+  Fname: 'Madhuri',
+  Bname: 'CHANDI',
+  Salary: 1200,
+  Jdate: '17-12-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cc'),
+  FID: 101,
+  Fname: 'Anil',
+  Bname: 'VRCE',
+  Salary: 1000,
+  Jdate: '1-3-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d2'),
+  FID: 107,
+  Fname: 'Shivani',
+  Bname: 'VIRAR',
+  Salary: 1000,
+  Jdate: '5-9-95'
+}
+db.Deposit.find().limit(2)
+{
+  _id: ObjectId('6764df9042f6b3f160b135cc'),
+  FID: 101,
+  Fname: 'Anil',
+  Bname: 'VRCE',
+  Salary: 1000,
+  Jdate: '1-3-95'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135cd'),
+  FID: 102,
+  Fname: 'Sunil',
+  Bname: 'AJNI',
+  Salary: 5000,
+  Jdate: '4-1-96'
+}
+db.Deposit.find().skip(2).limit(1)
+{
+  _id: ObjectId('6764df9042f6b3f160b135ce'),
+  FID: 103,
+  Fname: 'Mehul',
+  Bname: 'KAROLBAGH',
+  Salary: 3500,
+  Jdate: '17-11-95'
+}
+db.Deposit.find().skip(5).limit(2)
+{
+  _id: ObjectId('6764df9042f6b3f160b135d1'),
+  FID: 106,
+  Fname: 'Sandip',
+  Bname: 'ANDHERI',
+  Salary: 2000,
+  Jdate: '31-3-96'
+}
+{
+  _id: ObjectId('6764df9042f6b3f160b135d2'),
+  FID: 107,
+  Fname: 'Shivani',
+  Bname: 'VIRAR',
+  Salary: 1000,
+  Jdate: '5-9-95'
+}
+db.Deposit.find().count()

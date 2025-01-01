@@ -1,0 +1,55 @@
+use Darshan
+use DIET
+show databases
+db.dropDatabase()
+use Darshan
+
+db.createCollection("Student")
+
+db.createCollection("Department")
+
+show collections
+
+db.Department.insertOne({Dname:'CE',HOD:'Patel'})
+
+db.Department.insertMany([{Dname:'IT'},{Dname:'ICT'}])
+
+db.Department.drop()
+
+db.Student.insertOne({Name:'Mansi',City:'Morbi',Branch:'CSE',Semester:4,Age:19})
+
+db.Student.insertMany([{Name:'Darshi',City:'Morbi',Branch:'CSE',Semester:4,Age:19}])
+
+db.Student.insertMany([{Name:'Nandani',City:'Morbi',Branch:'CSE',Semester:4,Age:19},{Name:'Shruti',City:'Morbi',Branch:'CSE',Semester:4,Age:19},{Name:'Riya',City:'Morbi',Branch:'CSE',Semester:4,Age:19}])
+
+show collections
+Student
+db.Student.find()
+
+db.Student.drop()
+
+db.createCollection("Deposit")
+[{FID:1,Fname:'Anil',Bname:'CE',Salary:50000,Jdate:'4-1-96'}{FID:2,Fname:'Sunil',Bname:'CE',Salary:50000,Jdate:'4-1-96'},
+{FID:3,Fname:'Mehul',Bname:'IT',Salary:35000,Jdate:'17-11-95'},
+{FID:4,Fname:'Madhuri',Bname:'IT',Salary:12000,Jdate:'17-12-95'},
+{FID:5,Fname:'Pramod',Bname:'CE',Salary:30000,Jdate:'27-3-96'},
+{FID:6,Fname:'Sandip',Bname:'CE',Salary:20000,Jdate:'31-3-96'},
+{FID:7,Fname:'Shivani',Bname:'CE',Salary:10000,Jdate:'5-9-95'},
+{FID:8,Fname:'Kranti',Bname:'IT',Salary:50000,Jdate:'2-7-95'},
+]
+
+    
+{
+  "FID":6,"Fname":"Sandip","Bname":"CE","Salary":20000,"Jdate":"31-3-96"
+},
+    
+{
+  "FID":7,"Fname":"Shivani","Bname":"CE","Salary":10000,"Jdate":"5-9-95"
+},
+    
+{
+  "FID":8,"Fname":"Kranti","Bname":"IT","Salary":50000,"Jdate":"2-7-95"}
+  
+
+
+

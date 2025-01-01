@@ -1,0 +1,101 @@
+e Computer
+switched to db Computer
+db.createCollection("Student")
+{ ok: 1 }
+db.Student.insertMany([{ "_id": 1, "name": "John", "age": 30, "city": "New York", "isActive": true }, { "_id": 2, "name": "Jane", "age": 25, "city": "Los Angeles", "isActive": false }, { "_id": 3, "name": "Tom", "age": 35, "city": "Chicago", "isActive": true }, { "_id": 4, "name": "Lucy", "age": 28, "city": "San Francisco", "isActive": true }, { "_id": 5, "name": "David", "age": 40, "city": "Miami", "isActive": false }, { "_id": 6, "name": "Eva", "age": 23, "city": "Boston", "isActive": true }, { "_id": 7, "name": "Nick", "age": 38, "city": "Seattle", "isActive": false } ,{ "_id": 8, "name": "Sophia", "age": 27, "city": "New York", "isActive": true }, { "_id": 9, "name": "Liam", "age": 32, "city": "Los Angeles", "isActive": false } ,{ "_id": 10, "name": "Olivia", "age": 29, "city": "San Diego", "isActive": true } ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '4': 5,
+    '5': 6,
+    '6': 7,
+    '7': 8,
+    '8': 9,
+    '9': 10
+  }
+}
+db.Student.find().forEach(printjson)
+{ _id: 1, name: 'John', age: 30, city: 'New York', isActive: true }
+{ _id: 2, name: 'Jane', age: 25, city: 'Los Angeles', isActive: false }
+{ _id: 3, name: 'Tom', age: 35, city: 'Chicago', isActive: true }
+{
+  _id: 4,
+  name: 'Lucy',
+  age: 28,
+  city: 'San Francisco',
+  isActive: true
+}
+{ _id: 5, name: 'David', age: 40, city: 'Miami', isActive: false }
+{ _id: 6, name: 'Eva', age: 23, city: 'Boston', isActive: true }
+{ _id: 7, name: 'Nick', age: 38, city: 'Seattle', isActive: false }
+{ _id: 8, name: 'Sophia', age: 27, city: 'New York', isActive: true }
+{ _id: 9, name: 'Liam', age: 32, city: 'Los Angeles', isActive: false }
+{ _id: 10, name: 'Olivia', age: 29, city: 'San Diego', isActive: true }
+db.Student.find().forEach(printjson)
+{ _id: 1, name: 'John', age: 30, city: 'New York', isActive: true }
+{ _id: 2, name: 'Jane', age: 25, city: 'Los Angeles', isActive: false }
+{ _id: 3, name: 'Tom', age: 35, city: 'Chicago', isActive: true }
+{
+  _id: 4,
+  name: 'Lucy',
+  age: 28,
+  city: 'San Francisco',
+  isActive: true
+}
+{ _id: 5, name: 'David', age: 40, city: 'Miami', isActive: false }
+{ _id: 6, name: 'Eva', age: 23, city: 'Boston', isActive: true }
+{ _id: 7, name: 'Nick', age: 38, city: 'Seattle', isActive: false }
+{ _id: 8, name: 'Sophia', age: 27, city: 'New York', isActive: true }
+{ _id: 9, name: 'Liam', age: 32, city: 'Los Angeles', isActive: false }
+{ _id: 10, name: 'Olivia', age: 29, city: 'San Diego', isActive: true }
+db.Student.find().forEach(printjson())
+TypeError: e is not a function
+db.Student.find().forEach(printjson())
+TypeError: e is not a function
+db.Student.find().forEach(printjson)
+{ _id: 1, name: 'John', age: 30, city: 'New York', isActive: true }
+{ _id: 2, name: 'Jane', age: 25, city: 'Los Angeles', isActive: false }
+{ _id: 3, name: 'Tom', age: 35, city: 'Chicago', isActive: true }
+{
+  _id: 4,
+  name: 'Lucy',
+  age: 28,
+  city: 'San Francisco',
+  isActive: true
+}
+{ _id: 5, name: 'David', age: 40, city: 'Miami', isActive: false }
+{ _id: 6, name: 'Eva', age: 23, city: 'Boston', isActive: true }
+{ _id: 7, name: 'Nick', age: 38, city: 'Seattle', isActive: false }
+{ _id: 8, name: 'Sophia', age: 27, city: 'New York', isActive: true }
+{ _id: 9, name: 'Liam', age: 32, city: 'Los Angeles', isActive: false }
+{ _id: 10, name: 'Olivia', age: 29, city: 'San Diego', isActive: true }
+db.Student.updateOne({name:'John'},{$set:{age:31}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{ _id: 1, name: 'John', age: 31, city: 'New York', isActive: true }
+{ _id: 2, name: 'Jane', age: 25, city: 'Los Angeles', isActive: false }
+{ _id: 3, name: 'Tom', age: 35, city: 'Chicago', isActive: true }
+{
+  _id: 4,
+  name: 'Lucy',
+  age: 28,
+  city: 'San Francisco',
+  isActive: true
+}
+{ _id: 5, name: 'David', age: 40, city: 'Miami', isActive: false }
+{ _id: 6, name: 'Eva', age: 23, city: 'Boston', isActive: true }
+{ _id: 7, name: 'Nick', age: 38, city: 'Seattle', isActive: false }
+{ _id: 8, name: 'Sophia', age: 27, city: 'New York', isActive: true }
+{ _id: 9, name: 'Liam', age: 32, city: 'Los Angeles', isActive: false }
+{ _id: 10, name: 'Olivia', age: 29, city: 'San Diego', isActive: true }
+db.Student.updateMany({city:'New York'},{$set:{city:'New Jersey'}})

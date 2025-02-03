@@ -104,14 +104,54 @@ ON AR.Artist_id=A.Artist_id
 WHERE AR.Artist_id IN(SELECT Artist_id FROM Albums GROUP BY Artist_id HAVING COUNT(ALBUM_ID)>1)
 
 --23. Retrieve all albums along with the total number of songs.  
-SELECT A.Album_id, FROM Albums A
+SELECT A.Album_title,count(S.Song_id) FROM Albums A
 JOIN Songs S
 ON A.Album_id=S.Album_id
+GROUP BY A.Album_title
+
+
 --24. Retrieve all songs and release year and sort them by release year.  
+SELECT S.SONG_title,A.Release_year FROM Albums A
+JOIN Songs S
+ON A.Album_id=S.Album_id
+ORDER BY A.Release_year
+
 --25. Retrieve the total number of songs for each genre, showing genres that have more than 2 songs. 
---26. List all artists who have albums that contain more than 3 songs. 
+SELECT Genre,COUNT(SONG_ID) FROM Songs
+GROUP BY Genre
+HAVING COUNT(SONG_ID)>2
+
+--26. List all artists who have albums that contain more than 3 songs.
+SELECT ARTIST_NAME FROM Artist
+JOIN Albums
+ON Artist.Artist_id=Albums.Artist_id
+WHERE Albums.Album_title IN(
+SELECT A.Album_title FROM Albums A
+JOIN Songs S
+ON A.Album_id=S.Album_id
+GROUP BY A.Album_title
+HAVING COUNT(S.Song_id)>3)
+
 --Part – C 
---27. Retrieve albums that have been released in the same year as 'Album4' 
+--27. Retrieve albums that have been released in the same year as 'Album4'
+SELECT Album_title FROM Albums
+WHERE Release_year =(SELECT Release_year FROM Albums WHERE Album_title='ALBUM4')
+
 --28. Find the longest song in each genre 
+SELECT Song_title,Genre FROM Songs
+GROUP BY Genre
+HAVING MAX(DURATION)
+
 --29. Retrieve the titles of songs released in albums that contain the word 'Album' in the title. 
+SELECT Song_title FROM Songs
+WHERE Album_id IN(SELECT Album_id FROM Albums WHERE Album_title LIKE 'ALBUM%')
+
 --30. Retrieve the total duration of songs by each artist where total duration exceeds 15 minutes. 
+SELECT SUM(S.DURATION)  FROM Songs S 
+JOIN Albums A
+ON S.Album_id=A.Album_id
+JOIN Artist AR
+ON AR.Artist_id=A.Artist_id
+GROUP BY AR.Artist_name
+HAVING SUM(S.DURATION)>15
+

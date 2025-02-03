@@ -50,11 +50,12 @@ VALUES
 --1. Create Stored Procedure for Employee table As User enters either First Name 
 --or Last Name and based on this you must give EmployeeID, DOB, Gender & Hiredate.
 CREATE OR ALTER PROCEDURE PR_DETAIL
-@FNAME VARCHAR(50)
+@FNAME VARCHAR(50)=NULL,
+@LNAME VARCHAR(50)=NULL
 AS
 BEGIN
 SELECT EmployeeID,DoB,Gender,HireDate FROM Employee
-WHERE FirstName=@FNAME
+WHERE (FirstName=@FNAME) OR (LastName=@LNAME)
 END
 PR_DETAIL 'JANE'
 
@@ -120,15 +121,18 @@ PR_INFO_BY_GENDER 'M'
 --7. Create a Procedure that accepts First Name or Department Name as input 
 --and based on that employee data will come.
 CREATE OR ALTER PROCEDURE PR_EMPDATA
-@FNAME VARCHAR(50)
+@FNAME VARCHAR(50)=NULL,
+@DEPTNAME VARCHAR(50)=NULL
 AS
 BEGIN
-	SELECT * FROM Employee
-	WHERE FirstName=@FNAME OR DepartmentID=
-	(SELECT DepartmentID FROM Departments WHERE DepartmentName=@FNAME)
+	SELECT * FROM Employee E
+	JOIN Departments D
+	ON E.DepartmentID=D.DepartmentID
+	WHERE (E.FirstName=@FNAME) OR (D.DepartmentName=@DEPTNAME)
+	
 END
 
-PR_EMPDATA 'IT'
+PR_EMPDATA NULL,'IT'
 --8. Create a procedure that will accepts location, if user enters a location any 
 --characters, then he/she will get all the departments with all data.
 CREATE OR ALTER PROCEDURE PR_LOC
@@ -165,7 +169,7 @@ CREATE OR ALTER PROCEDURE PR_DET
 @LOCATION VARCHAR(50)
 AS
 BEGIN
-	SELECT D.DepartmentName,E.FirstName+E.LastName,P.ProjectName FROM Employee E
+	SELECT D.DepartmentName,E.FirstName+E.LastName,P.ProjectName,P.StartDate FROM Employee E
 	JOIN Departments D
 	ON E.DepartmentID=D.DepartmentID
 	JOIN Projects P

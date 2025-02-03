@@ -99,3 +99,1096 @@ db.Student.find().forEach(printjson)
 { _id: 9, name: 'Liam', age: 32, city: 'Los Angeles', isActive: false }
 { _id: 10, name: 'Olivia', age: 29, city: 'San Diego', isActive: true }
 db.Student.updateMany({city:'New York'},{$set:{city:'New Jersey'}})
+db.Student.updateMany({age:{$gt:35}},{$set:{isActive:false}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.Student.updateMany({},{$set:{age:age+1}})
+ReferenceError: age is not defined
+db.Student.updateMany({},{$inc:{age:1})
+SyntaxError: Unexpected token, expected "," (1:38)
+
+> 1 | db.Student.updateMany({},{$inc:{age:1})
+    |                                       ^
+db.Student.updateMany({},{$inc:{age:1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{ _id: 1, name: 'John', age: 32, city: 'New Jersey', isActive: true }
+{ _id: 2, name: 'Jane', age: 26, city: 'Los Angeles', isActive: false }
+{ _id: 3, name: 'Tom', age: 36, city: 'Chicago', isActive: true }
+{
+  _id: 4,
+  name: 'Lucy',
+  age: 29,
+  city: 'San Francisco',
+  isActive: true
+}
+{ _id: 5, name: 'David', age: 41, city: 'Miami', isActive: false }
+{ _id: 6, name: 'Eva', age: 24, city: 'Boston', isActive: true }
+{ _id: 7, name: 'Nick', age: 39, city: 'Seattle', isActive: false }
+{ _id: 8, name: 'Sophia', age: 28, city: 'New Jersey', isActive: true }
+{ _id: 9, name: 'Liam', age: 33, city: 'Los Angeles', isActive: false }
+{ _id: 10, name: 'Olivia', age: 30, city: 'San Diego', isActive: true }
+db.Student.updateOne({name:'Eva'},{$set:{city:'Cambridge'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{ _id: 1, name: 'John', age: 32, city: 'New Jersey', isActive: true }
+{ _id: 2, name: 'Jane', age: 26, city: 'Los Angeles', isActive: false }
+{ _id: 3, name: 'Tom', age: 36, city: 'Chicago', isActive: true }
+{
+  _id: 4,
+  name: 'Lucy',
+  age: 29,
+  city: 'San Francisco',
+  isActive: true
+}
+{ _id: 5, name: 'David', age: 41, city: 'Miami', isActive: false }
+{ _id: 6, name: 'Eva', age: 24, city: 'Cambridge', isActive: true }
+{ _id: 7, name: 'Nick', age: 39, city: 'Seattle', isActive: false }
+{ _id: 8, name: 'Sophia', age: 28, city: 'New Jersey', isActive: true }
+{ _id: 9, name: 'Liam', age: 33, city: 'Los Angeles', isActive: false }
+{ _id: 10, name: 'Olivia', age: 30, city: 'San Diego', isActive: true }
+db.Student.updateOne({name:'Sophia'},{$set:{isActive:false}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.updateOne({age:{$lt:30}},{$set:{city:'San Diego'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.updateMany({},{$rename:{age:"years"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{ _id: 1, name: 'John', city: 'New Jersey', isActive: true, years: 32 }
+{ _id: 2, name: 'Jane', city: 'San Diego', isActive: false, years: 26 }
+{ _id: 3, name: 'Tom', city: 'Chicago', isActive: true, years: 36 }
+{
+  _id: 4,
+  name: 'Lucy',
+  city: 'San Francisco',
+  isActive: true,
+  years: 29
+}
+{ _id: 5, name: 'David', city: 'Miami', isActive: false, years: 41 }
+{ _id: 6, name: 'Eva', city: 'Cambridge', isActive: true, years: 24 }
+{ _id: 7, name: 'Nick', city: 'Seattle', isActive: false, years: 39 }
+{
+  _id: 8,
+  name: 'Sophia',
+  city: 'New Jersey',
+  isActive: false,
+  years: 28
+}
+{
+  _id: 9,
+  name: 'Liam',
+  city: 'Los Angeles',
+  isActive: false,
+  years: 33
+}
+{
+  _id: 10,
+  name: 'Olivia',
+  city: 'San Diego',
+  isActive: true,
+  years: 30
+}
+db.Student.updateOne({name:'Nick'},{$set:{isActive:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.updateMany({},{$set:{country:"USA"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{
+  _id: 1,
+  name: 'John',
+  city: 'New Jersey',
+  isActive: true,
+  years: 32,
+  country: 'USA'
+}
+{
+  _id: 2,
+  name: 'Jane',
+  city: 'San Diego',
+  isActive: false,
+  years: 26,
+  country: 'USA'
+}
+{
+  _id: 3,
+  name: 'Tom',
+  city: 'Chicago',
+  isActive: true,
+  years: 36,
+  country: 'USA'
+}
+{
+  _id: 4,
+  name: 'Lucy',
+  city: 'San Francisco',
+  isActive: true,
+  years: 29,
+  country: 'USA'
+}
+{
+  _id: 5,
+  name: 'David',
+  city: 'Miami',
+  isActive: false,
+  years: 41,
+  country: 'USA'
+}
+{
+  _id: 6,
+  name: 'Eva',
+  city: 'Cambridge',
+  isActive: true,
+  years: 24,
+  country: 'USA'
+}
+{
+  _id: 7,
+  name: 'Nick',
+  city: 'Seattle',
+  isActive: true,
+  years: 39,
+  country: 'USA'
+}
+{
+  _id: 8,
+  name: 'Sophia',
+  city: 'New Jersey',
+  isActive: false,
+  years: 28,
+  country: 'USA'
+}
+{
+  _id: 9,
+  name: 'Liam',
+  city: 'Los Angeles',
+  isActive: false,
+  years: 33,
+  country: 'USA'
+}
+{
+  _id: 10,
+  name: 'Olivia',
+  city: 'San Diego',
+  isActive: true,
+  years: 30,
+  country: 'USA'
+}
+db.Student.updateOne({name:'David'},{$set:{city:"Orlando"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.updateMany({},{$mul:{age:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{
+  _id: 1,
+  name: 'John',
+  city: 'New Jersey',
+  isActive: true,
+  years: 32,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 2,
+  name: 'Jane',
+  city: 'San Diego',
+  isActive: false,
+  years: 26,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 3,
+  name: 'Tom',
+  city: 'Chicago',
+  isActive: true,
+  years: 36,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 4,
+  name: 'Lucy',
+  city: 'San Francisco',
+  isActive: true,
+  years: 29,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 5,
+  name: 'David',
+  city: 'Orlando',
+  isActive: false,
+  years: 41,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 6,
+  name: 'Eva',
+  city: 'Cambridge',
+  isActive: true,
+  years: 24,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 7,
+  name: 'Nick',
+  city: 'Seattle',
+  isActive: true,
+  years: 39,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 8,
+  name: 'Sophia',
+  city: 'New Jersey',
+  isActive: false,
+  years: 28,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 9,
+  name: 'Liam',
+  city: 'Los Angeles',
+  isActive: false,
+  years: 33,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 10,
+  name: 'Olivia',
+  city: 'San Diego',
+  isActive: true,
+  years: 30,
+  country: 'USA',
+  age: 0
+}
+db.Student.updateMany({},{$mul:{years:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{
+  _id: 1,
+  name: 'John',
+  city: 'New Jersey',
+  isActive: true,
+  years: 64,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 2,
+  name: 'Jane',
+  city: 'San Diego',
+  isActive: false,
+  years: 52,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 3,
+  name: 'Tom',
+  city: 'Chicago',
+  isActive: true,
+  years: 72,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 4,
+  name: 'Lucy',
+  city: 'San Francisco',
+  isActive: true,
+  years: 58,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 5,
+  name: 'David',
+  city: 'Orlando',
+  isActive: false,
+  years: 82,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 6,
+  name: 'Eva',
+  city: 'Cambridge',
+  isActive: true,
+  years: 48,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 7,
+  name: 'Nick',
+  city: 'Seattle',
+  isActive: true,
+  years: 78,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 8,
+  name: 'Sophia',
+  city: 'New Jersey',
+  isActive: false,
+  years: 56,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 9,
+  name: 'Liam',
+  city: 'Los Angeles',
+  isActive: false,
+  years: 66,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 10,
+  name: 'Olivia',
+  city: 'San Diego',
+  isActive: true,
+  years: 60,
+  country: 'USA',
+  age: 0
+}
+db.Student.updateMany({name:'Tom',{$unset:{city:""}}})
+SyntaxError: Unexpected token (1:34)
+
+> 1 | db.Student.updateMany({name:'Tom',{$unset:{city:""}}})
+    |                                   ^
+db.Student.updateMany({name:'Tom'},{$unset:{city:""}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{
+  _id: 1,
+  name: 'John',
+  city: 'New Jersey',
+  isActive: true,
+  years: 64,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 2,
+  name: 'Jane',
+  city: 'San Diego',
+  isActive: false,
+  years: 52,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 3,
+  name: 'Tom',
+  isActive: true,
+  years: 72,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 4,
+  name: 'Lucy',
+  city: 'San Francisco',
+  isActive: true,
+  years: 58,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 5,
+  name: 'David',
+  city: 'Orlando',
+  isActive: false,
+  years: 82,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 6,
+  name: 'Eva',
+  city: 'Cambridge',
+  isActive: true,
+  years: 48,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 7,
+  name: 'Nick',
+  city: 'Seattle',
+  isActive: true,
+  years: 78,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 8,
+  name: 'Sophia',
+  city: 'New Jersey',
+  isActive: false,
+  years: 56,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 9,
+  name: 'Liam',
+  city: 'Los Angeles',
+  isActive: false,
+  years: 66,
+  country: 'USA',
+  age: 0
+}
+{
+  _id: 10,
+  name: 'Olivia',
+  city: 'San Diego',
+  isActive: true,
+  years: 60,
+  country: 'USA',
+  age: 0
+}
+db.Student.updateMany({age:{$gt:30}},{$set:{PremiumUser:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.Student.updateMany({years:{$gt:30}},{$set:{PremiumUser:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+db.Student.find().forEach(printjson)
+{
+  _id: 1,
+  name: 'John',
+  city: 'New Jersey',
+  isActive: true,
+  years: 64,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 2,
+  name: 'Jane',
+  city: 'San Diego',
+  isActive: false,
+  years: 52,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 3,
+  name: 'Tom',
+  isActive: true,
+  years: 72,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 4,
+  name: 'Lucy',
+  city: 'San Francisco',
+  isActive: true,
+  years: 58,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 5,
+  name: 'David',
+  city: 'Orlando',
+  isActive: false,
+  years: 82,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 6,
+  name: 'Eva',
+  city: 'Cambridge',
+  isActive: true,
+  years: 48,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 7,
+  name: 'Nick',
+  city: 'Seattle',
+  isActive: true,
+  years: 78,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 8,
+  name: 'Sophia',
+  city: 'New Jersey',
+  isActive: false,
+  years: 56,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 9,
+  name: 'Liam',
+  city: 'Los Angeles',
+  isActive: false,
+  years: 66,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 10,
+  name: 'Olivia',
+  city: 'San Diego',
+  isActive: true,
+  years: 60,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+db.Student.updateOne({name:'Jane'},{$set:{isActive:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.updateOne({name:'Lucy'},{$set:{isActive:false}})
+db.Student.deleteOne({name:'Nick'})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.Student.deleteMany({isActive:false})
+{
+  acknowledged: true,
+  deletedCount: 4
+}
+db.Student.deleteMany({city:'New York'})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.Student.find().forEach(printjson)
+{
+  _id: 1,
+  name: 'John',
+  city: 'New Jersey',
+  isActive: true,
+  years: 64,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 2,
+  name: 'Jane',
+  city: 'San Diego',
+  isActive: true,
+  years: 52,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 3,
+  name: 'Tom',
+  isActive: true,
+  years: 72,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 6,
+  name: 'Eva',
+  city: 'Cambridge',
+  isActive: true,
+  years: 48,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+{
+  _id: 10,
+  name: 'Olivia',
+  city: 'San Diego',
+  isActive: true,
+  years: 60,
+  country: 'USA',
+  age: 0,
+  PremiumUser: true
+}
+db.Student.deleteMany({years:{$gt:35}})
+{
+  acknowledged: true,
+  deletedCount: 5
+}
+db.Student.insertMany([{ "_id": 1, "name": "John", "age": 30, "city": "New York", "isActive": true }, { "_id": 2, "name": "Jane", "age": 25, "city": "Los Angeles", "isActive": false }, { "_id": 3, "name": "Tom", "age": 35, "city": "Chicago", "isActive": true }, { "_id": 4, "name": "Lucy", "age": 28, "city": "San Francisco", "isActive": true }, { "_id": 5, "name": "David", "age": 40, "city": "Miami", "isActive": false }, { "_id": 6, "name": "Eva", "age": 23, "city": "Boston", "isActive": true }, { "_id": 7, "name": "Nick", "age": 38, "city": "Seattle", "isActive": false } ,{ "_id": 8, "name": "Sophia", "age": 27, "city": "New York", "isActive": true }, { "_id": 9, "name": "Liam", "age": 32, "city": "Los Angeles", "isActive": false } ,{ "_id": 10, "name": "Olivia", "age": 29, "city": "San Diego", "isActive": true } ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '4': 5,
+    '5': 6,
+    '6': 7,
+    '7': 8,
+    '8': 9,
+    '9': 10
+  }
+}
+db.Student.deleteOne({name:'Oliva'})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.Student.deleteOne({name:'Olivia'})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.Student.deleteMany({years:{$lt:25}})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.Student.deleteOne({isActive:false})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.Student.deleteOne({city:'Los Angeles'})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.Student.deleteMany({city:'Los Angeles'})
+db.Student.deleteMany({city:{$exists:false}})
+db.Student.updateMany({},{$rename:{city:"Location"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.Student.updateMany({name:"John"},{$rename:{name:"FullName"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Student.updateMany({},{$rename:{isActive:"Satus"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+("Employee",{capped:true,size:5120,max:100,validator:{$jsonSchema:{bsonType:"object",required:["Ecode","Ename"],properties:{Ecode:{bsonType:"int"},Ename:{bsonType:"string"},Age:{bsonType:"int"},City:{bsonType:"string"}}}}})
+{ ok: 1 }
+
+db.Student.updateMany({city:"San Franciso"},{$rename:{age:"YearsOld"}})
+db.Employee.insertMany([{"Ecode": 1, "Ename": "John"}, {"Ecode ": 2, "Ename": "Jane", "age": 25, "city": "Los Angeles"}, {"Ecode ": 3, "Ename": "Tom", "age": 35}, {"Ecode ": 4, "Ename": "Lucy", "age": 28, "city": "San Francisco", "isActive": true}, {"Ename": "Dino"} ]
+ 
+
+CCCCCC
+
+Computer
+switched to db Computer
+db.Student_data.find({city:'Rajkot'})
+db.Student_data.find().forEach(printjson)
+{
+  _id: ObjectId('67775a29f48f921671c3e0cf'),
+  RollNo: 101,
+  Sname: 'Vina',
+  Department: 'CE',
+  Fees: 15000,
+  Sem: 3,
+  Gender: 'Female',
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d0'),
+  RollNo: 102,
+  Sname: 'Krisha',
+  Department: 'EC',
+  Fees: 8000,
+  Sem: 5,
+  Gender: 'Female',
+  City: 'Ahmedabad'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d1'),
+  RollNo: 103,
+  Sname: 'Priti',
+  Department: 'Civil',
+  Fees: 12000,
+  Sem: 7,
+  Gender: 'Female',
+  City: 'Baroda'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d2'),
+  RollNo: 104,
+  Sname: 'Mitul',
+  Department: 'CE',
+  Fees: 15000,
+  Sem: 3,
+  Gender: 'Male',
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d3'),
+  RollNo: 105,
+  Sname: 'Keshav',
+  Department: 'CE',
+  Fees: 15000,
+  Sem: 3,
+  Gender: 'Male',
+  City: 'Jamnagar'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d4'),
+  RollNo: 106,
+  Sname: 'Zarna',
+  Department: 'Civil',
+  Fees: 12000,
+  Sem: 5,
+  Gender: 'Female',
+  City: 'Ahmedabad'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d5'),
+  RollNo: 107,
+  Sname: 'Nima',
+  Department: 'EE',
+  Fees: 9000,
+  Sem: 5,
+  Gender: 'Female',
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d6'),
+  RollNo: 108,
+  Sname: 'Dhruv',
+  Department: 'Mechanical',
+  Fees: 10000,
+  Sem: 5,
+  Gender: 'Male',
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d7'),
+  RollNo: 109,
+  Sname: 'Krish',
+  Department: 'Mechanical',
+  Fees: 10000,
+  Sem: 7,
+  Gender: 'Male',
+  City: 'Baroda'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d8'),
+  RollNo: 110,
+  Sname: 'Zeel',
+  Department: 'EE',
+  Fees: 9000,
+  Sem: 3,
+  Gender: 'Female',
+  City: 'Jamnangar'
+}
+db.Student_data.find({name:"vina"}).forEach(printjson)
+db.Student_data.find({$and:[{Gender:"Female"},{City:"Rajkot"}]})
+{
+  _id: ObjectId('67775a29f48f921671c3e0cf'),
+  RollNo: 101,
+  Sname: 'Vina',
+  Department: 'CE',
+  Fees: 15000,
+  Sem: 3,
+  Gender: 'Female',
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d5'),
+  RollNo: 107,
+  Sname: 'Nima',
+  Department: 'EE',
+  Fees: 9000,
+  Sem: 5,
+  Gender: 'Female',
+  City: 'Rajkot'
+}
+db.Student_data.find({Sem:{$ne:3}})
+{
+  _id: ObjectId('67775a29f48f921671c3e0d0'),
+  RollNo: 102,
+  Sname: 'Krisha',
+  Department: 'EC',
+  Fees: 8000,
+  Sem: 5,
+  Gender: 'Female',
+  City: 'Ahmedabad'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d1'),
+  RollNo: 103,
+  Sname: 'Priti',
+  Department: 'Civil',
+  Fees: 12000,
+  Sem: 7,
+  Gender: 'Female',
+  City: 'Baroda'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d4'),
+  RollNo: 106,
+  Sname: 'Zarna',
+  Department: 'Civil',
+  Fees: 12000,
+  Sem: 5,
+  Gender: 'Female',
+  City: 'Ahmedabad'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d5'),
+  RollNo: 107,
+  Sname: 'Nima',
+  Department: 'EE',
+  Fees: 9000,
+  Sem: 5,
+  Gender: 'Female',
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d6'),
+  RollNo: 108,
+  Sname: 'Dhruv',
+  Department: 'Mechanical',
+  Fees: 10000,
+  Sem: 5,
+  Gender: 'Male',
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d7'),
+  RollNo: 109,
+  Sname: 'Krish',
+  Department: 'Mechanical',
+  Fees: 10000,
+  Sem: 7,
+  Gender: 'Male',
+  City: 'Baroda'
+}
+db.Student_data.find({$in:[{City:"Jamnagar"},{City:"Baroda"}]})
+MongoServerError[BadValue]: unknown top level operator: $in. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.
+db.Student_data.find({$in:[{City:"Jamnagar"},{City:"Baroda"}]})
+MongoServerError[BadValue]: unknown top level operator: $in. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.
+db.Student_data.find({City:{$in:["Jamnagar","Baroda"]}})
+{
+  _id: ObjectId('67775a29f48f921671c3e0d1'),
+  RollNo: 103,
+  Sname: 'Priti',
+  Department: 'Civil',
+  Fees: 12000,
+  Sem: 7,
+  Gender: 'Female',
+  City: 'Baroda'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d3'),
+  RollNo: 105,
+  Sname: 'Keshav',
+  Department: 'CE',
+  Fees: 15000,
+  Sem: 3,
+  Gender: 'Male',
+  City: 'Jamnagar'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d7'),
+  RollNo: 109,
+  Sname: 'Krish',
+  Department: 'Mechanical',
+  Fees: 10000,
+  Sem: 7,
+  Gender: 'Male',
+  City: 'Baroda'
+}
+db.Student_data.find({City:"Baroda"}).limit(2)
+{
+  _id: ObjectId('67775a29f48f921671c3e0d1'),
+  RollNo: 103,
+  Sname: 'Priti',
+  Department: 'Civil',
+  Fees: 12000,
+  Sem: 7,
+  Gender: 'Female',
+  City: 'Baroda'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d7'),
+  RollNo: 109,
+  Sname: 'Krish',
+  Department: 'Mechanical',
+  Fees: 10000,
+  Sem: 7,
+  Gender: 'Male',
+  City: 'Baroda'
+}
+db.Student_data.find({$and:[{Gender:"Male"},{Sem:3}]})
+{
+  _id: ObjectId('67775a29f48f921671c3e0d2'),
+  RollNo: 104,
+  Sname: 'Mitul',
+  Department: 'CE',
+  Fees: 15000,
+  Sem: 3,
+  Gender: 'Male',
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d3'),
+  RollNo: 105,
+  Sname: 'Keshav',
+  Department: 'CE',
+  Fees: 15000,
+  Sem: 3,
+  Gender: 'Male',
+  City: 'Jamnagar'
+}
+db.Student_data.find({RollNo:{$lt:105}},{Sname,City,Fees})
+ReferenceError: Sname is not defined
+db.Student_data.find({RollNo:{$lt:105}},{Sname:1,City:1,Fees:1})
+{
+  _id: ObjectId('67775a29f48f921671c3e0cf'),
+  Sname: 'Vina',
+  Fees: 15000,
+  City: 'Rajkot'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d0'),
+  Sname: 'Krisha',
+  Fees: 8000,
+  City: 'Ahmedabad'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d1'),
+  Sname: 'Priti',
+  Fees: 12000,
+  City: 'Baroda'
+}
+{
+  _id: ObjectId('67775a29f48f921671c3e0d2'),
+  Sname: 'Mitul',
+  Fees: 15000,
+  City: 'Rajkot'
+}
+db.Student_data.updateMany({$and:[{Department:'CE'},{City:"Jamnagar"}]},{$set:{City:"Surat"}})

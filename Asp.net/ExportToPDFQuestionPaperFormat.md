@@ -19,7 +19,8 @@ The `ExportToPDFQuestionPaperFormat` function retrieves data from the database u
 
 In the action method for your list page, add the following logic to fetch data from the SQL Server database:
 
-```csharp public IActionResult ExportToPdf()
+```csharp
+ public IActionResult ExportToPdf()
  {
      string connectionString = _configuration.GetConnectionString("ConnectionString");
      DataTable table = new DataTable();
